@@ -3,5 +3,7 @@
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>Login.qml</file>
+        <file>img/logo_ekylibre.png</file>
+        <file>main.cpp</file>
     </qresource>
 </RCC>
