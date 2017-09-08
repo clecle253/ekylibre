@@ -1,8 +1,12 @@
 import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
+import Ekylibre.connection 1.0
+import Ekylibre.db 1.0
 
 Item {
+    Connection{id:connection}
+    DBaccess{id:dbaccess}
     ColumnLayout{
         id: layout
         spacing: 2
@@ -15,12 +19,16 @@ Item {
         }
 
         TextField {
-            text: qsTr("Login")
+            placeholderText: "Login"
             anchors.horizontalCenter: layout.horizontalCenter
+            onTextChanged: connection.usrname = text
         }
         TextField {
-            text: qsTr("Password")
+            placeholderText: "Password"
+            echoMode: TextInput.Password
+            //echoMode: TextInput.PasswordEchoOnEdit
             anchors.horizontalCenter: layout.horizontalCenter
+            onTextChanged: {connection.password = text}
         }
         Rectangle{
             height: bouton_connexion.height
@@ -29,6 +37,7 @@ Item {
             Button{
                 id: bouton_connexion
                 text: "Connexion"
+                onPressed: dbaccess.dbstup
             }
             Button{
                 id: bouton_inscription
