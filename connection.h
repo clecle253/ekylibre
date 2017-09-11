@@ -17,6 +17,7 @@ public:
     void set_user(const QString &login);
     void set_pass(const QString &pasword);
     void connect_to_base();
+    void com_token_request();
 
 signals:
 

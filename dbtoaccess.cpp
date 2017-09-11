@@ -2,6 +2,11 @@
 
 DBtoaccess::DBtoaccess(QObject *parent) : QObject(parent)
 {
+
+}
+
+bool DBtoaccess::init_drivers()
+{
     if (QSqlDatabase::isDriverAvailable(DRIVER))
     {
         m_db = QSqlDatabase::addDatabase(DRIVER);
@@ -32,8 +37,13 @@ QString DBtoaccess::DBstockuser(const QString &user, const QString &token)
 QString DBtoaccess::DBtogetusr()
 {
     QSqlQuery query;
-    query.exec("INSERT INTO login(pseudo) VALUES('pseudo2')");
-    if (!query.exec("SELECT pseudo FROM login"))
-            qWarning() << "requette non effectué" << query.lastError();
-    return(query.value(0).toString());
+    QSqlRecord rec;
+    QString name;
+
+    query.exec("SELECT pseudo FROM login");
+    rec = query.record();
+    while (query.next()) {
+        name = query.value(rec.indexOf("pseudo")).toString();
+    }
+    return (name);
 }

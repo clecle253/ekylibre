@@ -14,7 +14,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp \
     connection.cpp \
-    dbtoaccess.cpp
+    dbtoaccess.cpp \
+    incident.cpp
 
 RESOURCES += qml.qrc
 
@@ -31,4 +32,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     connection.h \
-    dbtoaccess.h
+    dbtoaccess.h \
+    incident.h

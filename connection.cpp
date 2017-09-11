@@ -20,4 +20,14 @@ void connection::set_pass(const QString &pasword)
     qWarning() << "le password est :" << m_pasword;
 }
 
+void connection::com_token_request()
+{
+    /*
+    QNetworkRequest query (QUrl("https://api.ekylibre.com/v2/tokens"));
+
+    query.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    */
+    qWarning() << " jai tout efacer -\\../-";
+}
+
 

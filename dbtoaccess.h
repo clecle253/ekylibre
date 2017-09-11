@@ -21,6 +21,7 @@ class DBtoaccess : public QObject
     Q_PROPERTY(QString dbstup READ DB_setup_tables)
 public:
     explicit DBtoaccess(QObject *parent = nullptr);
+    bool init_drivers();
     QString DB_setup_tables();
     QString DBstockuser(const QString &user, const QString &token);
     QString DBtogetusr();
