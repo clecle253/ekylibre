@@ -23,27 +23,6 @@ bool DBtoaccess::init_drivers()
 
 QString DBtoaccess::DB_setup_tables()
 {
-    QSqlQuery query("CREATE TABLE token (id INTEGER PRIMARY KEY, key TEXT)");
     QSqlQuery query2("CREATE TABLE login (id INTEGER PRIMARY KEY, pseudo TEXT, pass TEXT");
     return ("");
-}
-
-QString DBtoaccess::DBstockuser(const QString &user, const QString &token)
-{
-    // appel d'une metode pour verifier que l'api dise ok et retourne un token
-    return ("");
-}
-
-QString DBtoaccess::DBtogetusr()
-{
-    QSqlQuery query;
-    QSqlRecord rec;
-    QString name;
-
-    query.exec("SELECT pseudo FROM login");
-    rec = query.record();
-    while (query.next()) {
-        name = query.value(rec.indexOf("pseudo")).toString();
-    }
-    return (name);
 }

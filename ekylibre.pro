@@ -1,4 +1,4 @@
-QT += quick qml network sql
+QT += quick qml network sql multimedia
 CONFIG += c++11
 
 # The following define makes your compiler emit warnings if you use
@@ -15,7 +15,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp \
     connection.cpp \
     dbtoaccess.cpp \
-    incident.cpp
+    incident.cpp \
+    customcamera.cpp
 
 RESOURCES += qml.qrc
 
@@ -33,4 +34,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     connection.h \
     dbtoaccess.h \
-    incident.h
+    incident.h \
+    customcamera.h
+ #   ../library/Ekylib/ekylib.h
+
+#linux:!android {
+ #   message("* Using settings for Unix/Linux.")
+#    INCLUDEPATH += "/home/clement/ekylibre/qt/library/Ekylib"
+#    LIBS += "/home/clement/ekylibre/qt/library/Ekylib-Desktop_Release/libEkylib.a"
+#}
+#
+#android {
+#    message("* Using settings for Android.")
+#    INCLUDEPATH += "/home/clement/ekylibre/qt/library/Ekylib"
+#    LIBS += "/home/clement/ekylibre/qt/library/Ekylib-Android_armeabi_v7a_Release/libEkylib.a"
+#}

@@ -3,6 +3,7 @@
 #include "connection.h"
 #include "dbtoaccess.h"
 #include "incident.h"
+//#include "ekylib.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,10 +18,6 @@ int main(int argc, char *argv[])
     connection tst;
 
     tst.com_token_request();
-
-    incident test;
-
-    qWarning() << test.m_key;
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));

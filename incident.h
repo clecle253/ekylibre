@@ -30,7 +30,7 @@ public:
     void set_icon_index(const int &icon_index);
     void set_picture(const QString &image);
     void set_sound(const QString &sound);
-    int m_key;
+    QString get_the_file_name(const bool &is_a_picture);
 signals:
 
 public slots:
@@ -45,7 +45,7 @@ private:
     int m_icon_index;
     QString m_picture;
     QString m_sound;
-
+    int m_new_key;
 };
 
 #endif // INCIDENT_H

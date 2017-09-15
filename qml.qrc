@@ -4,7 +4,8 @@
         <file>qtquickcontrols2.conf</file>
         <file>Login.qml</file>
         <file>img/logo_ekylibre.png</file>
-        <file>main.cpp</file>
         <file>incident.qml</file>
+        <file>Camera_test.qml</file>
+        <file>Menu_bar.qml</file>
     </qresource>
 </RCC>

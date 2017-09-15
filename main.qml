@@ -11,7 +11,7 @@ ApplicationWindow {
     StackView{
         id: stack_view
         focus: true
-        initialItem: Qt.resolvedUrl("Login.qml")
+        initialItem: Qt.resolvedUrl("Menu_bar.qml")
         anchors.fill: parent
         Keys.onReleased: if (event.key === Qt.Key_Back && stack_view.depth > 1){
                              StackView.pop();

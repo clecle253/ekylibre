@@ -15,10 +15,10 @@ incident::incident(QObject *parent) : QObject(parent)
     query.exec("SELECT id FROM incidents");
     while (query.next())
     {
-        if (m_key <= query.value(query.record().indexOf("id")).toInt())
-            m_key = query.value(query.record().indexOf("id")).toInt();
+        if (m_new_key <= query.value(query.record().indexOf("id")).toInt())
+            m_new_key = query.value(query.record().indexOf("id")).toInt();
     }
-    m_key += 1;
+    m_new_key += 1;
 }
 
 bool incident::check_database()
@@ -39,14 +39,19 @@ void incident::set_date(){m_date = QDateTime::currentDateTime();}
 void incident::set_field(const QString &field){m_field = field;}
 void incident::set_note(const QString &note){m_note = note;}
 void incident::set_icon_index(const int &icon_index){m_icon_index = icon_index;}
-void incident::set_picture(const QString &image)
+void incident::set_picture(const QString &image){m_picture = image;}
+void incident::set_sound(const QString &sound){m_sound = sound;}
+QString incident::get_the_file_name(const bool &is_a_picture)
 {
-
+    QString name;
+    if (is_a_picture == true)
+        name += "picture-";
+    else
+        name += "sound-";
+    name += (m_new_key + '0');
+    return (name);
 }
-void incident::set_sound(const QString &sound)
-{
 
-}
 bool incident::store_data()
 {
     QSqlQuery query;

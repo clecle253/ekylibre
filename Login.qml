@@ -46,7 +46,7 @@ Item {
                 anchors.left: bouton_connexion.right
                 anchors.leftMargin: 10
             }
-        }
+        } 
     }
 }
 
